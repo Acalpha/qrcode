@@ -1,0 +1,11 @@
+/* 推荐到首页 */
+#chrome-mt-extend {position:fixed;z-index:200;padding:25px 0 0 5px;bottom:5px;right:5px;width:165px;border:1px solid #ddd;border-radius:4px;background:#fff;}
+#chrome-mt-extend    .mt-extend:after {content:'LIST';top:-1px;left:-1px;padding:3px 7px;line-height:1;border:1px solid #ddd;border-radius:4px 0 4px 0;color:#9da0a4;background:#f5f5f5;}
+#chrome-mt-extend    .rc-share ul {overflow:hidden;}
+#chrome-mt-extend        .rc-share li {float:left;margin:0 5px 5px 0;position:relative;margin-bottom:5px;}
+#chrome-mt-extend            .rc-share img {display:block;}
+#chrome-mt-extend            .rc-share .inp-checkbox {position:absolute;left:0;bottom:0;}
+#chrome-mt-extend    .rc-btn {display:none;clear:both;padding:5px;white-space:nowrap;text-align:center;overflow:hidden;}
+#chrome-mt-extend        .rc-btn .inp-btn {margin:0 5px;padding:0 10px;border:0;height:23px;line-height:23px;border-radius:4px;color:#fff;background:#a7a9aa;}
+
+#chrome-mt-extend-tips {display:none;position:absolute;z-index:1000;top:50%;left:50%;margin:-19px 0 0 -140px;width:280px;height:38px;line-height:38px;text-align:center;border-radius:4px;color:#fff;box-shadow:0 0 5px rgba(0,0,0,.4);background:rgba(0,0,0,.5);}

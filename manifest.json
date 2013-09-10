@@ -1,0 +1,22 @@
+{
+	"name": "mt-tools",
+	"version": "0.1",
+	"description": "tools",
+	"manifest_version": 2,
+	"icons": {
+		"48": "icon48.png"
+	},
+	"content_scripts": [
+	    {
+	      "matches": ["http://*.lovewith.me/*"],
+	      "js": ["jquery.js", "init.js"],
+	      "css": ["main.css"]
+	    }
+	  ],
+	"permissions": [
+		"tabs",
+		"http://*/*",
+		"https://*/*",
+		"notifications"
+	]
+}
