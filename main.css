@@ -1,5 +1,5 @@
 /* 推荐到首页 */
-#chrome-mt-extend {position:fixed;z-index:200;top:5%;right:0px;padding-bottom:10px;width:340px;border:1px solid #ddd;border-radius:0 0 0 4px;background:#fff;}
+#chrome-mt-extend {position:fixed;z-index:200;top:50px;right:-342px;padding-bottom:10px;width:340px;border:1px solid #ddd;border-radius:0 0 0 4px;background:#fff;}
 #chrome-mt-extend input {padding:5px 3px;height:15px;line-height:15px;border:1px solid #F1F1F1;color:#666;outline:none;}
 #chrome-mt-extend	h5 {position:absolute;top:-1px;left:-25px;padding:10px 2px;width:20px;line-height:1.4;text-align:center;border-radius:4px 0 0 4px;box-shadow:0 0 2px rgba(0,0,0,.2);color:#fff;cursor:pointer;background:#F38269;}
 #chrome-mt-extend	.mt-imgbox {padding:15px 0 5px 15px;overflow:hidden;}
