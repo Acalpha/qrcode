@@ -1,11 +1,31 @@
 /* 推荐到首页 */
-#chrome-mt-extend {position:fixed;z-index:200;padding:25px 0 0 5px;bottom:5px;right:5px;width:165px;border:1px solid #ddd;border-radius:4px;background:#fff;}
-#chrome-mt-extend    .mt-extend:after {content:'LIST';top:-1px;left:-1px;padding:3px 7px;line-height:1;border:1px solid #ddd;border-radius:4px 0 4px 0;color:#9da0a4;background:#f5f5f5;}
-#chrome-mt-extend    .rc-share ul {overflow:hidden;}
-#chrome-mt-extend        .rc-share li {float:left;margin:0 5px 5px 0;position:relative;margin-bottom:5px;}
-#chrome-mt-extend            .rc-share img {display:block;}
-#chrome-mt-extend            .rc-share .inp-checkbox {position:absolute;left:0;bottom:0;}
-#chrome-mt-extend    .rc-btn {display:none;clear:both;padding:5px;white-space:nowrap;text-align:center;overflow:hidden;}
-#chrome-mt-extend        .rc-btn .inp-btn {margin:0 5px;padding:0 10px;border:0;height:23px;line-height:23px;border-radius:4px;color:#fff;background:#a7a9aa;}
+#chrome-mt-extend {position:fixed;z-index:200;top:5%;right:0px;padding-bottom:10px;width:340px;border:1px solid #ddd;border-radius:0 0 0 4px;background:#fff;}
+#chrome-mt-extend input {padding:5px 3px;height:15px;line-height:15px;border:1px solid #F1F1F1;color:#666;outline:none;}
+#chrome-mt-extend	h5 {position:absolute;top:-1px;left:-25px;padding:10px 2px;width:20px;line-height:1.4;text-align:center;border-radius:4px 0 0 4px;box-shadow:0 0 2px rgba(0,0,0,.2);color:#fff;cursor:pointer;background:#F38269;}
+#chrome-mt-extend	.mt-imgbox {padding:15px 0 5px 15px;overflow:hidden;}
+#chrome-mt-extend		.mt-imgbox li {float:left;margin:0 10px 10px 0;position:relative;width:70px;height:70px;overflow:hidden;overflow:hidden;}
+#chrome-mt-extend			.mt-imgbox span {position:absolute;top:0;z-index:0;visibility:hidden;width:48%;height:100%;line-height:70px;text-align:center;font-family:simsun;color:#fff;background:rgba(0,0,0,.3);cursor:pointer;}
+#chrome-mt-extend				.mt-imgbox li:hover span {visibility:visible;}
+#chrome-mt-extend	 			.mt-imgbox li:first-child .mt-extend-prev {display:none;}
+#chrome-mt-extend	 			.mt-imgbox li:last-child .mt-extend-next {display:none;}
+#chrome-mt-extend	 		.mt-extend-prev	{left:0;}	
+#chrome-mt-extend	 		.mt-extend-next	{right:0;}
+#chrome-mt-extend	 		.mt-extend-del {display:none;position:absolute;top:5px;right:5px;z-index:1;width:13px;height:13px;font:12px/12px verdana;text-align:center;color:#ccc;background:#06c;}
+#chrome-mt-extend	 		li:hover .mt-extend-del {display:block;}
+#chrome-mt-extend			.mt-imgbox img {display:block;}
+#chrome-mt-extend	.mt-titlebox {margin-bottom:5px;padding:0 15px;}
+#chrome-mt-extend		.mt-titlebox input {width:302px;}
+#chrome-mt-extend	.mt-tagbox {padding:15px 0 5px;overflow:hidden;}
+#chrome-mt-extend		.mt-tagbox li {position:relative;margin-bottom:5px;padding:0 15px;overflow:hidden;}
+#chrome-mt-extend			.mt-tagbox input {float:left;}
+#chrome-mt-extend			.mt-tagbox .mt-tag {width:60px;margin-right:10px;}
+#chrome-mt-extend			.mt-tagbox .mt-link {width:224px;}
+#chrome-mt-extend			.mt-tagbox .mt-tag-btn {position:absolute;top:7px;left:1px;width:13px;height:13px;font:12px/13px verdana;text-align:center;color:#ccc;}
+#chrome-mt-extend			.mt-tagbox .mt-tag-btn:hover {color:#666;}
+#chrome-mt-extend	.mt-btn-box {clear:both;padding:5px;white-space:nowrap;text-align:center;overflow:hidden;}
+#chrome-mt-extend		.mt-btn {margin:0 5px;padding:0 10px;border:0;height:25px;line-height:25px;border-radius:4px;color:#fff;background:#a7a9aa;cursor:pointer;}
+#chrome-mt-extend		.mt-btn-sm {color:#fff;background:#428BCA;}
+#chrome-mt-extend		.mt-btn-sm:hover {background:#3276B1;}
+#chrome-mt-extend		.mt-btn-clear:hover {background:#999;}
 
-#chrome-mt-extend-tips {display:none;position:absolute;z-index:1000;top:50%;left:50%;margin:-19px 0 0 -140px;width:280px;height:38px;line-height:38px;text-align:center;border-radius:4px;color:#fff;box-shadow:0 0 5px rgba(0,0,0,.4);background:rgba(0,0,0,.5);}
+#chrome-mt-tips {display:none;position:absolute;z-index:1000;top:50%;left:50%;margin:-19px 0 0 -140px;width:280px;height:38px;line-height:38px;text-align:center;border-radius:4px;color:#fff;box-shadow:0 0 5px rgba(0,0,0,.4);background:rgba(0,0,0,.5);}

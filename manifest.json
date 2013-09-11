@@ -1,7 +1,7 @@
 {
-	"name": "mt-tools",
+	"name": "婚礼时光运营工具",
 	"version": "0.1",
-	"description": "tools",
+	"description": "婚礼时光运营工具",
 	"manifest_version": 2,
 	"icons": {
 		"48": "icon48.png"
