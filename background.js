@@ -7,7 +7,10 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		active: true
 	});
 
-	chrome.tabs.executeScript(null, {code:"document.body.bgColor='red'"});
+	chrome.tabs.executeScript(null, {
+		code: "document.body.bgColor='red'",
+		file: []
+	});
 
 	sendResponse({}); // snub them.
 });
