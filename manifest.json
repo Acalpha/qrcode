@@ -4,13 +4,18 @@
 	"description": "婚礼时光运营工具",
 	"manifest_version": 2,
 	"icons": {
-		"48": "icon48.png"
+		"48": "images/icon48.png"
 	},
+	"background": {
+		"page": "background.html"
+	},
+	"options_page": "options.html",
 	"content_scripts": [
 	    {
 	      "matches": ["http://*.lovewith.me/*"],
-	      "js": ["jquery.js", "init.js"],
-	      "css": ["main.css"]
+	      "js": ["app/jquery.js", "app/topic/init.js", "app/publish/init.js"],
+	      "css": ["app/topic/main.css"],
+	      "run_at": "document_end"
 	    }
 	  ],
 	"permissions": [
@@ -18,5 +23,10 @@
 		"http://*/*",
 		"https://*/*",
 		"notifications"
-	]
+	],
+	"browser_action": {
+		"default_title": "",
+		"default_icon": "images/icon16.png",
+		"default_popup": "popup.html"
+	}
 }
