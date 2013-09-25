@@ -156,7 +156,7 @@ timerTask.prototype = {
 			if(m == 10){
 				window.location.reload(-1);
 			}
-			if(m != 0 && m%3 == 0){
+			if(m != 0 && m%30 == 0){
 				if(theSendTime != this.cache.lastSendTime){
 		            var el = cache.element.find('a').eq(0);
 		            var url = el.attr('href');
