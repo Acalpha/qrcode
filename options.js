@@ -43,7 +43,6 @@ timerTask.prototype = {
 		self._restoreURL();
 		self._showHistory();
 
-		console.log('-->render');
 		self._updateTime();
 	},
 
@@ -141,7 +140,14 @@ timerTask.prototype = {
 			self._updateTime();
 		}, 1000);
 
-		self._validateTime(time.h, time.m, time.s);
+		//每小时的10分刷新一次
+		if(time.m == 10){
+			window.location.reload(-1);
+		}
+
+		if(time.s == 30){
+			self._validateTime(time.h, time.m, time.s);
+		}
 	},
 
 	_validateTime: function(h, m, s){
@@ -151,21 +157,13 @@ timerTask.prototype = {
 		var s = parseInt(s, 10);
 		var theSendTime = [h, m, s].join('-');
 
-		//if(s%15 == 0){
-		if(h >= 7 && h <= 23 && s == 1){
-			if(m == 10){
-				window.location.reload(-1);
-			}
-			if(m != 0 && m%30 == 0){
+		if(h >= 7 && h <= 23){
+			if(m == 1 || m == 31){
 				if(theSendTime != this.cache.lastSendTime){
 		            var el = cache.element.find('a').eq(0);
 		            var url = el.attr('href');
 
 		            this.cache.lastSendTime = theSendTime;
-
-		            console.log('lastSend: '+ this.cache.lastSendTime);
-		            console.log('theSend: '+ theSendTime);
-		        	console.log('---------->start post '+ $.trim($('#date').text().replace(/\s+/gi, ':')));
 
 		           	if(url){
 		           		this._saveHistory(url);
@@ -173,7 +171,6 @@ timerTask.prototype = {
 		           		el.parent().remove();
 
 		           		//发布微博
-		           		console.log(url);
 		           		chrome.extension.sendRequest({
 							type: 'publish',
 							url: url +'#auto_publish'
@@ -181,11 +178,6 @@ timerTask.prototype = {
 		            }
 				}
 			}
-		}
-
-		//固定点刷新页面
-		if(s == 1 && m == 50){
-			window.location.reload();
 		}
 	},
 
@@ -266,5 +258,4 @@ timerTask.prototype = {
 	}
 };
 
-console.log('====>load');
 new timerTask().render();
