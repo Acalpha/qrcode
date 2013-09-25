@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>选项</title>
+<style>
+body,h1,h2,h3,h4,h5,h6,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td {margin:0;padding:0;}
+body,button,input,select,textarea {font: 12px/1.5 'Microsoft YaHei',tahoma,arial,simsun,sans-serif;}
+h1,h2,h3,h4,h5,h6,button,input,select,textarea {font-size:100%;}
+label,input,select {vertical-align:middle;}
+address,cite,em {font-style:normal;}
+fieldset,img {border:none;}
+ul,ol {list-style:none;}
+table {border-collapse:collapse}
+sub {vertical-align:text-bottom;}
+sup {vertical-align:text-top;}
+small {font-size:12px;}
+legend {color:#000;}
+a, a:visited {text-decoration:none;}
+a:hover {text-decoration:none;}
+a {color:#333}
+a:hover {color:#F775B1;}
+
+
+.option {padding:10px;width:300px;color:#666;}
+	.option h4 {margin-bottom:10px;font-size:100;font-size:14px;text-align:center;}
+	fieldset {margin-bottom:10px;padding:5px 10px 10px;border:1px solid #ddd;border-radius:2px;}
+		legend {padding:0 10px;}
+	.inp-text {float:left;margin-right:15px;border-radius:2px;padding:3px 5px;border:1px solid #ccc;width:110px;line-height:1.5;}
+	.inp-btn {padding:5px 15px;border:0;border-radius:3px;color:#fff;background:#5cb85c;cursor:pointer;}
+	.inp-btn:hover {background:#47a447;}
+</style>
+</head>
+<body>
+<div class="option" id="account">
+	<h4>自动登录帐号设置</h4>
+	<fieldset data-type="sina">
+		<legend>新浪微博</legend>
+		<input class="inp-text" type="text" placeholder="微博帐号" name="username" value="" />
+		<input class="inp-text" type="text" placeholder="微博密码" name="pwd" value="" />
+	</fieldset>
+	<!--fieldset>
+		<legend>点点</legend>
+		<input class="inp-text" type="text" placeholder="微博帐号" />
+		<input class="inp-text" type="text" placeholder="微博密码" />
+	</fieldset -->
+	<input class="inp-btn" type="button" value="保存" />
+</div>
+<script src="app/jquery.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
