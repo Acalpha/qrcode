@@ -64,10 +64,9 @@ chrome.extension.onRequest.addListener(function(data, sender, sendResponse){
 
 //初次安装自动打开设置界面
 if(!localStorage.getItem('mt_auto_publish_firstrun')){
-	chrome.tabs.create({url: 'chrome-extension://dinmpcccgmkhdgpkjpelmgjlleiahedf/options.html', active:true});
+	chrome.tabs.create({url: chrome.extension.getURL('options.html'), active:true});
 	localStorage.setItem('mt_auto_publish_firstrun', 1);
 }
-
 
 //点击icon打开设置页面
 chrome.browserAction.onClicked.addListener(function(tab) {
