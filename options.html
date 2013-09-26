@@ -1,55 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<title>倒计时</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link rel="stylesheet" href="images/bootstrap.css" />
+<meta charset="utf-8">
+<title>选项</title>
 <style>
-body, h2, h3 {font-family:'微软雅黑';}
-.date {margin-bottom:20px;text-align:center;font-size:0;color:#666;:red;overflow:hidden;}
-	.date i {margin-right:10px;font-size:50px;color:#666;color:#999;}
-	.date span {display:inline-block;position:relative;padding:0 10px 0 20px;font-size:50px;vertical-align:top;line-height:1.02;overflow:hidden;}
-		.date span:after {content:':';position:absolute;top:-4px;left:0;width:10px;}
-		.date .d-hour:after {display:none;}
+body,h1,h2,h3,h4,h5,h6,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td {margin:0;padding:0;}
+body,button,input,select,textarea {font: 12px/1.5 'Microsoft YaHei',tahoma,arial,simsun,sans-serif;}
+h1,h2,h3,h4,h5,h6,button,input,select,textarea {font-size:100%;}
+label,input,select {vertical-align:middle;}
+address,cite,em {font-style:normal;}
+fieldset,img {border:none;}
+ul,ol {list-style:none;}
+table {border-collapse:collapse}
+sub {vertical-align:text-bottom;}
+sup {vertical-align:text-top;}
+small {font-size:12px;}
+legend {color:#000;}
+a, a:visited {text-decoration:none;}
+a:hover {text-decoration:none;}
+a {color:#333}
+a:hover {color:#F775B1;}
 
-.box, .url-list {padding:20px;border:1px solid rgba(0,0,0,.15);}
-.box {border-radius:4px 4px 0 0;}
-	.box textarea {margin-bottom:10px;resize:none;}
-	.box .btn {margin-right:10px;}
-.url-list {position:relative;border-top:0;border-radius:0 0 4px 4px;background:#f7f7f9;}
-.url-list:after {content:'待发布';position:absolute;top:-1px;left:-1px;padding:3px 7px;border:1px solid #ddd;border-bottom-right-radius:4px;background:#fff;}
-	.url-list ol {margin:0;padding-top:40px;}
-		.url-list li {position:relative;z-index:0;margin:0;padding:5px;border-radius:5px;}
-		.url-list li:hover {background:#d5d5d5;}
-			.url-list a, .url-list a:hover {color:#06c;}
-			.url-list span {position:absolute;top:4px;right:7px;width:21px;text-align:center;cursor:pointer;font:100 14px/1.5 verdana;color:#999;overflow:hidden;}
-			.url-list span:hover {color:#06c;}
-.ul-wait {border-radius:0;}
-.ul-history:after {content:'已发布';}
+
+.option {margin:0 auto;padding:10px;width:800px;color:#666;font-size:16px;}
+	.inp-text {margin-right:5px;padding:8px;border-radius:2px;width:300px;border:1px solid #ccc;font-size:16px;color:#666;line-height:1.5;}
+	select {margin:0;}
+	.opt-box {margin-bottom:50px;border:0;border-radius:2px;}
+		.option h4 {margin-bottom:20px;line-height:40px;border-bottom:1px solid #ddd;}
+			.option h4 span {padding-left:10px;font-weight:100;font-size:14px;color:#d9534f}
+		.opt-box li {margin-bottom:20px;overflow:hidden;}
+		.opt-box label {float:left;width:60px;line-height:42px;letter-spacing:5px;}
+
+	.opt-time {overflow:hidden;}
+		.opt-time li {position:relative;line-height:30px;}
+			.opt-time span {padding-left:20px;font-size:14px;}
+			.opt-time ul {position:absolute;margin:0;top:-13px;left:240px;padding:15px 0;font-size:12px;}
+				.opt-time ul li {float:left;margin-right:20px;padding:0 10px;border-radius:5px;height:27px;line-height:27px;background:#EFEFEF;}
+
+	.btn-box {margin:0 auto;padding-top:50px;text-align:center;}
+		.inp-btn {display:block;margin:0 auto;padding:8px 25px;border:0;border-radius:3px;color:#fff;background:#5cb85c;cursor:pointer;}
+		.inp-btn:hover {background:#47a447;}
 </style>
 </head>
 <body>
-<div class="container">
-	<h2 class="date" id="date">
-		<i class="glyphicon glyphicon-time"></i>
-		<span class="d-hour">--</span>
-		<span class="d-minutes">--</span>
-		<span class="d-second">--</span>
-	</h2>
-	<div class="row main">
-		<div class="box">
-			<textarea name="" class="form-control inp-atxt" rows="4" cols="" id="add-box"></textarea>
-			<button type="button" class="btn btn-primary" id="btn-add">添加到待发布</button>
-			<button type="button" class="btn btn-success" id="btn-clean-done">清空已发布</button>
-		</div>
-		<div class="url-list ul-wait">
-			<ol id="ul-wait-main"></ol>
-		</div>
-		<div class="url-list ul-history">
-			<ol id="ul-his-main"></ol>
-		</div>
+<div class="option">
+	<h4>帐号设置</h4>
+	<ul class="opt-box" id="account">
+		<li data-type="sina">
+			<label>微博</label>
+			<input class="inp-text" type="text" placeholder="微博帐号" name="username" value="" />
+			<input class="inp-text" type="text" placeholder="微博密码" name="pwd" value="" />
+		</li>
+		<li data-type="diandian">
+			<label>点点</label>
+			<input class="inp-text" type="text" placeholder="帐号" disabled="disabled" title="还没做好" />
+			<input class="inp-text" type="text" placeholder="密码" disabled="disabled" title="还没做好" />
+		</li>
+	</ul>
+
+	<h4>时间设置<span>(自动发布时间段为：7:30 - 23:30)</span></h4>
+	<ul class="opt-time">
+		<li>
+			每 <select name="timer" id="step">
+				<option value="">--</option>
+				<option value="15">15</option>
+				<option value="30">30</option>
+				<option value="60">60</option>
+			</select> 分钟 <span>当前时间 <em id="now"></em> </span>
+			<ul id="time-step"></ul>
+		</li>
+	</ul>
+	<div class="btn-box">
+		<input class="inp-btn" id="save" type="button" value="保存" />
 	</div>
 </div>
 <script src="app/jquery.js"></script>

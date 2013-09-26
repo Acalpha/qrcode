@@ -15,7 +15,76 @@ var MT = {
 		return account[type] || {};
 	}
 };
+	
+//倒计时
+var countDown = (function(){
+	var CountDown = function(){
+		this.cache = {
+			now: null,
+			datetime: null,
+			step: null,
+			hn: $('#date .d-hour'),
+			mn: $('#date .d-minutes'),
+			sn: $('#date .d-second'),
+			lastIndex: null
+		}
+	}
 
+	CountDown.prototype = {
+		render: function(data){
+			var self = this;
+			var cache = self.cache;
+
+			cache.now = new Date().getTime();
+			cache.datetime = data.datetime;
+			cache.step = data.step;
+
+			self.fillDom();
+		},
+
+		//显示倒计时
+		fillDom: function(){
+			var self = this;
+			var cache = self.cache;
+			var now = new Date(cache.now + 1000);
+			var diff = parseInt((now.getTime() - cache.datetime)/60000, 10);
+
+			cache.hn.html(now.getHours());
+			cache.mn.html(now.getMinutes());
+			cache.sn.html(now.getSeconds());
+
+			console.log(diff+"|"+cache.step+"|"+cache.lastIndex);
+
+			if(diff%cache.step == 0 && cache.lastIndex != diff){
+				var target = $('#ul-wait-main a').eq(0);
+				
+				if(target.size() > 0){
+					var oldLink = target.attr('href');
+					
+					cache.lastIndex = diff;
+					target.attr('href', oldLink +'#auto_publish');
+					//打开
+					MT.doClick(target.get(0));
+
+					$('#ul-his-main').append('<li><a href="'+ oldLink +'" target="_blank">'+ oldLink +'</a></li>')
+
+					MT.doClick(target.next().get(0));
+				}
+			}
+
+			clearTimeout(cache.timer);
+			cache.timer = setTimeout(function(){
+				cache.now = now.getTime();
+				self.fillDom();
+			}, 1000);
+		}
+	}
+
+	return new CountDown();
+})();
+
+
+//同步到点点
 var diandian = (function(){
 	var Diandian = function(){
 		this.cache = {
@@ -71,6 +140,8 @@ var diandian = (function(){
 	return new Diandian();
 })();
 
+
+//同步到微博
 var weibo = (function(){
 	var Weibo = function(){
 		this.cache = {
@@ -88,15 +159,15 @@ var weibo = (function(){
 			chrome.extension.sendRequest({
 				type: 'account',
 				action: 'get'
-			}, function(account){
+			}, function(data){
+				var account = data.account;
+
 				if(account['sina']){
 					snAccount = account['sina'];
-
 					if(snAccount['username'] && snAccount['password']){
 						cache.user = snAccount['username'];
 						cache.pwd = snAccount['password'];
 					}
-
 					callback(true);
 				}else{
 					callback(false);
@@ -132,7 +203,7 @@ var weibo = (function(){
 
 			link = [
 				'http://service.weibo.com/share/share.php?', 
-				'url=', encodeURIComponent(window.location.href),
+				'url=', encodeURIComponent(window.location.href.replace('#auto_publish', '')),
 				'&title=', encodeURIComponent(title),
 				'&appkey=2838777972',
 				'&pic=', encodeURIComponent(pic.replace('{\'pic\':\'', '').replace('\'}', '')),
@@ -225,6 +296,7 @@ var weibo = (function(){
 		login: function(){
 			var cache = this.cache;
 
+			console.log(cache);
 			$('.WB_dialog .WB_iptxt').each(function(){
 				if($(this).attr('type') == 'text'){
 					$(this).val(cache.user);
@@ -246,20 +318,42 @@ var weibo = (function(){
 	var location = window.location.href;
 
 	//打开detail自动分享到微博
-	if(document.domain.indexOf('lovewith.me') > -1 && location.match(/lovewith\.me(\:\d+)?\/share\/detail\/all\/\d+#auto_publish/gi)){
-	//if(document.domain.indexOf('lovewith.me') > -1 && location.indexOf('share/detail/all/') > -1){
-		//console.log('自动发布');
-		weibo.isReady(function(isReady){
-			if(isReady){
-				weibo.render();
-			}else{
-				alert('没有添加微博帐号');
-			}
-		});
+	if(document.domain.indexOf('lovewith.me') > -1){
+		//挂机页面
+		if(location.indexOf('/tools/wb.html') > -1){
+			chrome.extension.sendRequest({
+				type: 'account',
+				action: 'get'
+			}, function(data){
+				console.log(data);
+				countDown.render({
+					datetime: data.datetime,
+					step: data.step
+				});
+			});
+		}
+
+		//自动发布
+		if(location.match(/lovewith\.me(\:\d+)?\/share\/detail\/all\/\d+#auto_publish/gi)){
+			//console.log('自动发布');
+			weibo.isReady(function(isReady){
+				if(isReady){
+					weibo.render();
+				}else{
+					alert('没有添加微博帐号');
+				}
+			});
+		}
 	}
 
 	//新浪微博分享页面自动填充登录数据并提交分享
 	if(location.indexOf('service.weibo.com/share/') > -1){
-		weibo.publish();
+		weibo.isReady(function(isReady){
+			if(isReady){
+				weibo.publish();
+			}else{
+				alert('没有添加微博帐号');
+			}
+		});
 	}
 })();

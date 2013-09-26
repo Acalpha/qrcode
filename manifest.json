@@ -1,6 +1,6 @@
 {
 	"name": "婚礼时光运营工具",
-	"version": "0.12.1",
+	"version": "0.13",
 	"description": "婚礼时光运营工具",
 	"manifest_version": 2,
 	"icons": {
@@ -23,10 +23,5 @@
 		"http://*/*",
 		"https://*/*",
 		"notifications"
-	],
-	"browser_action": {
-		"default_title": "",
-		"default_icon": "images/icon16.png",
-		"default_popup": "popup.html"
-	}
+	]
 }
