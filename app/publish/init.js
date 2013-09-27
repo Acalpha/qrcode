@@ -55,20 +55,22 @@ var countDown = (function(){
 
 			console.log(diff+"|"+cache.step+"|"+cache.lastIndex);
 
-			if(diff%cache.step == 0 && cache.lastIndex != diff){
-				var target = $('#ul-wait-main a').eq(0);
-				
-				if(target.size() > 0){
-					var oldLink = target.attr('href');
+			if(now.getHours() > 6 && now.getHours() < 24){
+				if(diff%cache.step == 0 && cache.lastIndex != diff){
+					var target = $('#ul-wait-main a').eq(0);
 					
-					cache.lastIndex = diff;
-					target.attr('href', oldLink +'#auto_publish');
-					//打开
-					MT.doClick(target.get(0));
+					if(target.size() > 0){
+						var oldLink = target.attr('href');
+						
+						cache.lastIndex = diff;
+						target.attr('href', oldLink +'#auto_publish');
+						//打开
+						MT.doClick(target.get(0));
 
-					$('#ul-his-main').append('<li><a href="'+ oldLink +'" target="_blank">'+ oldLink +'</a></li>')
+						$('#ul-his-main').append('<li><a href="'+ oldLink +'" target="_blank">'+ oldLink +'</a></li>')
 
-					MT.doClick(target.next().get(0));
+						MT.doClick(target.next().get(0));
+					}
 				}
 			}
 
