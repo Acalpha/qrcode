@@ -1,6 +1,6 @@
 {
 	"name": "婚礼时光运营工具",
-	"version": "0.13.2",
+	"version": "0.14.0",
 	"description": "婚礼时光运营工具",
 	"manifest_version": 2,
 	"icons": {
@@ -11,13 +11,37 @@
 	},
 	"options_page": "options.html",
 	"content_scripts": [
+		{
+			"matches": ["http://*/*"],
+			"js": ["app/jquery.js", "app/mt.js"],
+			"css": ["app/topic/main.css"]
+		},
+		//推送到首页
 	    {
-	      "matches": ["http://*/*","https://*/*"],
-	      "js": ["/app/jquery.js", "/app/topic/init.js", "/app/publish/init.js"],
-	      "css": ["/app/topic/main.css"],
-	      "run_at": "document_idle"
+			"matches": ["http://*.lovewith.me/share/detail/*/?mid=*"],
+			"js": ["app/topic/init.js"]
+	    },
+	    //倒计时
+	    {
+			"matches": ["http://*.lovewith.me/tools/wb.html"],
+			"js": ["app/auto_publish/countdown.js"]
+		},
+	    //自动发布
+	    {
+			"matches": ["http://*.lovewith.me/share/detail/all/*/auto_publish"],
+			"js": ["app/auto_publish/init.js"]
+	    },
+	    //自动发布
+	    {
+			"matches": ["http://service.weibo.com/share/share*"],
+			"js": ["app/auto_publish/weibo.js"]
+	    },
+	    //自动发布
+	    {
+			"matches": ["http://service.weibo.com/share/success*"],
+			"js": ["app/auto_publish/closetab.js"]
 	    }
-	  ],
+	],
 	"permissions": [
 		"tabs",
 		"http://*/*",
