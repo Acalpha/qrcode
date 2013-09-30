@@ -1,4 +1,4 @@
-//同步到点点
+//同步到腾讯微博
 var Qweibo = function(){
 	this.cache = {
 		username: null,
@@ -9,7 +9,7 @@ Qweibo.prototype = {
 	init: function(obj){
 		var self = this;
 		var cache = self.cache;
-		var loginEl = $('.uinfo a').eq(0)
+		var loginEl = $('.uinfo a').eq(0);
 		
 		cache.username = obj.username;
 		cache.password = obj.password;
@@ -50,14 +50,10 @@ Qweibo.prototype = {
 	//选中图片
 	selectImage: function(){
 		$('.slider_inner .image').each(function(i){
-			if($(this).size() > 0 && i > 0 && i < 6){
+			if($(this).size() > 0 && i > 0 && i < 9){
 				MT.doClick($(this).find('img'));
 			}
 		});
-	},
-
-	publish: function(){
-		
 	}
 };
 

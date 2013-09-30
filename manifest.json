@@ -1,6 +1,6 @@
 {
 	"name": "婚礼时光运营工具",
-	"version": "0.14.0",
+	"version": "0.15.0",
 	"description": "婚礼时光运营工具",
 	"manifest_version": 2,
 	"icons": {
@@ -25,7 +25,7 @@
 			"js": ["app/auto_publish/countdown.js"]
 		},
 	    {
-			"matches": ["http://*.lovewith.me/share/detail/all/*/auto_publish"],
+			"matches": ["http://*.lovewith.me/share/detail/all/*"],
 			"js": ["app/auto_publish/init.js"]
 	    },
 	    {
@@ -39,6 +39,14 @@
 	    {
 			"matches": ["http://share.v.t.qq.com/index*"],
 			"js": ["app/auto_publish/tqq.js"]
+	    },
+	    {
+			"matches": ["http://cang.baidu.com/do/add*"],
+			"js": ["app/auto_publish/cang.js"]
+	    },
+	    {
+			"matches": ["http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey*"],
+			"js": ["app/auto_publish/qzone.js"]
 	    }
 	],
 	"permissions": [
