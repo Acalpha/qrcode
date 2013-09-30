@@ -16,30 +16,29 @@
 			"js": ["app/jquery.js", "app/mt.js"],
 			"css": ["app/topic/main.css"]
 		},
-		//推送到首页
 	    {
 			"matches": ["http://*.lovewith.me/share/detail/*/?mid=*"],
 			"js": ["app/topic/init.js"]
 	    },
-	    //倒计时
 	    {
 			"matches": ["http://*.lovewith.me/tools/wb.html"],
 			"js": ["app/auto_publish/countdown.js"]
 		},
-	    //自动发布
 	    {
 			"matches": ["http://*.lovewith.me/share/detail/all/*/auto_publish"],
 			"js": ["app/auto_publish/init.js"]
 	    },
-	    //自动发布
 	    {
 			"matches": ["http://service.weibo.com/share/share*"],
 			"js": ["app/auto_publish/weibo.js"]
 	    },
-	    //自动发布
 	    {
-			"matches": ["http://service.weibo.com/share/success*"],
-			"js": ["app/auto_publish/closetab.js"]
+			"matches": ["http://www.diandian.com/*"],
+			"js": ["app/auto_publish/diandian.js"]
+	    },
+	    {
+			"matches": ["http://share.v.t.qq.com/index*"],
+			"js": ["app/auto_publish/tqq.js"]
 	    }
 	],
 	"permissions": [

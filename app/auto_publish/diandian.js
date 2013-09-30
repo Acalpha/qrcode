@@ -1,55 +1,68 @@
 //同步到点点
-var diandian = (function(){
-	var Diandian = function(){
-		this.cache = {
-			title: $.trim($('h1').html()),
-			element: $('#share li'),
-			desc: $('.det-cont').html()
-		}
+var Diandian = function(){
+	this.cache = {
+		username: null,
+		password: null
 	}
-	Diandian.prototype = {
-		render: function(){
-			var self = this;
-			var images = [];
-			var element = self.cache.element;
+}
+Diandian.prototype = {
+	init: function(obj){
+		var cache = this.cache;
+		
+		cache.username = obj.username;
+		cache.password = obj.password;
 
-			element.each(function(i){
-				var path = $(this).find('img').attr('src');
-				
-				if(path.indexOf('blank.gif') > -1){
-					path = $(this).find('img').data('src');
-				}
-
-				//最多只允许20张图片
-				if(i < 20){
-					images.push('src['+ i +']='+ self.switchCover(path));
-				}
-			});
-
-			self.openTab({
-				title: self.cache.title,
-				desc: self.cache.desc,
-				images: images
-			});
-		},
-
-
-		openTab: function(data){
-			//console.log(data);
-			chrome.extension.sendRequest(data, function(response) {
-				//console.log(response);
-			});
-		},
-
-		/* 切换小图到封面 */
-		switchCover: function(image){
-			if(image.indexOf('.jpg!') > -1){
-				return image.replace('!240', '!650');
-			}else{
-				return image.replace('_240x999.jpg', '_650x999.jpg');
-			}
+		if(window.location.href.match(/^http:\/\/www\.diandian\.com\/login/gi)){
+			this.login();
 		}
-	};
+		
+		if(window.location.href.indexOf('diandian.com/share?lo=') > -1){
+			this.publish();
+		}
+	},
 
-	return new Diandian();
-})();
+	login: function(){
+		var cache = this.cache;
+
+		$('#login-form input').each(function(){
+			if($(this).attr('name') == 'account'){
+				$(this).val(cache.username);
+			}
+
+			if($(this).attr('name') == 'password'){
+				$(this).val(cache.password);
+			}
+		});
+
+		MT.doClick($('#login-form .input-button'));
+	},
+
+	publish: function(){
+		var tag = $('#pb-photos-title').val().replace(/^#([^#]*)#.*/, '$1');
+		var count = $('#pb-photo-layout a').size();
+		var index = Math.round(Math.random() * (count - 1));
+
+		//随机选择图片布局
+		MT.doClick($('#pb-photo-layout a').eq(index));
+
+		//添加tag
+		$('#post-tag-list').append('<li tag="'+ tag +'"><span>'+ tag +'</span></li>');
+
+		//发布
+		MT.doClick($('#ctrlbuttonpb-submittext'));
+	}
+};
+
+chrome.extension.sendRequest({
+	type: 'account',
+	action: 'get'
+}, function(data){
+	var account = data.account.diandian;
+
+	setTimeout(function(){
+		new Diandian().init({
+			username: account['username'],
+			password: account['password']
+		});
+	}, 5 * 1000)
+});

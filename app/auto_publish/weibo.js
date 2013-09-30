@@ -29,6 +29,7 @@ Weibo.prototype = {
 
 	//登录
 	checkLoginStat: function(){
+		var cache = this.cache;
 		var def = $.Deferred();
 
 		if($('#pl_share_login a').eq(0).attr('action-type') == 'login'){
@@ -111,8 +112,6 @@ Weibo.prototype = {
 		if(process.size() > 0 || target.size() > 0){
 			var retryEl = target.find('a').eq(0);
 
-			console.log('ddddddddddddd');
-
 			if(msg && msg.indexOf('重试') > -1){
 				//console.log('重试');
 				MT.doClick(retryEl);
@@ -130,7 +129,6 @@ chrome.extension.sendRequest({
 	action: 'get'
 }, function(data){
 	var account = data.account.sina;
-
 	new Weibo().init({
 		username: account['username'],
 		password: account['password']

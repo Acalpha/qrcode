@@ -34,6 +34,10 @@ CountDown.prototype = {
 		cache.mn.html(now.getMinutes());
 		cache.sn.html(now.getSeconds());
 
+		if(now.getMinutes() == 15 && now.getSeconds() == 15){
+			window.location.reload();
+		}
+
 		console.log(diff+"|"+cache.step+"|"+cache.lastIndex);
 
 		if(now.getHours() > 6 && now.getHours() < 24){
