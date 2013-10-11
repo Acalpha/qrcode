@@ -1,6 +1,6 @@
 {
 	"name": "婚礼时光运营工具",
-	"version": "0.16.1",
+	"version": "0.16.2",
 	"description": "婚礼时光运营工具",
 	"manifest_version": 2,
 	"icons": {
@@ -41,7 +41,7 @@
 			"js": ["app/auto_publish/tqq.js"]
 	    },
 	    {
-			"matches": ["http://cang.baidu.com/do/add*"],
+			"matches": ["http://cang.baidu.com/do/*"],
 			"js": ["app/auto_publish/cang.js"]
 	    },
 	    {

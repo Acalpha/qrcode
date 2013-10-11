@@ -124,13 +124,15 @@ Weibo.prototype = {
 	}
 };
 
-chrome.extension.sendRequest({
-	type: 'account',
-	action: 'get'
-}, function(data){
-	var account = data.account.sina;
-	new Weibo().init({
-		username: account['username'],
-		password: account['password']
+$(window).load(function(){
+	chrome.extension.sendRequest({
+		type: 'account',
+		action: 'get'
+	}, function(data){
+		var account = data.account.sina;
+		new Weibo().init({
+			username: account['username'],
+			password: account['password']
+		});
 	});
 });

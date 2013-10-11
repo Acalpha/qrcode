@@ -55,11 +55,11 @@
 
 			$(this).find('.inp-text').each(function(){
 				if($(this).attr('name') == 'username'){
-					username = $(this).val();
+					username = $.trim($(this).val());
 				}
 
 				if($(this).attr('name') == 'pwd'){
-					password = $(this).val();
+					password = $.trim($(this).val());
 				}
 			});
 

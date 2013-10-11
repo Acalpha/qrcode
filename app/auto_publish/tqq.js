@@ -57,16 +57,19 @@ Qweibo.prototype = {
 	}
 };
 
-chrome.extension.sendRequest({
-	type: 'account',
-	action: 'get'
-}, function(data){
-	var account = data.account.qq;
 
-	setTimeout(function(){
-		new Qweibo().init({
-			username: account['username'],
-			password: account['password']
-		});
-	}, 5 * 1000)
+$(window).load(function(){
+	chrome.extension.sendRequest({
+		type: 'account',
+		action: 'get'
+	}, function(data){
+		var account = data.account.qq;
+
+		setTimeout(function(){
+			new Qweibo().init({
+				username: account['username'],
+				password: account['password']
+			});
+		}, 5 * 1000)
+	});
 });

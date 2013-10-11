@@ -45,6 +45,7 @@ Qzone.prototype = {
 	}
 };
 
+
 chrome.extension.sendRequest({
 	type: 'account',
 	action: 'get'

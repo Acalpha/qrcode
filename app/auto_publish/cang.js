@@ -44,10 +44,12 @@ Cang.prototype = {
 	}
 };
 
+
 chrome.extension.sendRequest({
 	type: 'account',
 	action: 'get'
 }, function(data){
+	console.log(data);
 	var account = data.account.baidu;
 
 	setTimeout(function(){
@@ -55,5 +57,5 @@ chrome.extension.sendRequest({
 			username: account['username'],
 			password: account['password']
 		});
-	}, 8 * 1000);
+	}, 2 * 1000);
 });
