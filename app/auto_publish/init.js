@@ -100,6 +100,11 @@ $(window).load(function(){
 			setTimeout(function(){
 				shareTo.renren();
 			}, 8* 60 * 1000);
+
+			//15分钟后关闭窗口
+			setTimeout(function(){
+				window.close();
+			}, 15 * 60 * 1000);
 		}
 	}
 })

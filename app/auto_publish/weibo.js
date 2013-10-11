@@ -95,7 +95,7 @@ Weibo.prototype = {
 				setTimeout(function(){
 					window.location.reload();
 				}, 1 * 60 * 1000);
-			}, 2000);
+			}, 20 * 000);
 		}
 	},
 
