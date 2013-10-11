@@ -48,7 +48,7 @@ CountDown.prototype = {
 					var oldLink = target.attr('href');
 					
 					cache.lastIndex = diff;
-					target.attr('href', oldLink +'/auto_publish');
+					target.attr('href', oldLink +'#auto_publish');
 					//打开
 					MT.doClick(target);
 

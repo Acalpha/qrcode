@@ -19,6 +19,12 @@ Diandian.prototype = {
 		if(window.location.href.indexOf('diandian.com/share?lo=') > -1){
 			this.publish();
 		}
+
+		if(window.location.href.indexOf('diandian.com/home') > -1){
+			if(document.referrer.indexOf('www.lovewith.me') > -1){
+				window.close();
+			}
+		}
 	},
 
 	login: function(){
