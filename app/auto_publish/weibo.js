@@ -91,11 +91,11 @@ Weibo.prototype = {
 				//轮询发布状态
 				self.checkState();
 				
-				//2分钟如果还没发布成功就刷新页面
+				//1分钟如果还没发布成功就刷新页面
 				setTimeout(function(){
 					window.location.reload();
 				}, 1 * 60 * 1000);
-			}, 20 * 000);
+			}, 2 * 60 * 1000);
 		}
 	},
 
