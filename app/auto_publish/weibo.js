@@ -130,8 +130,8 @@ chrome.extension.sendRequest({
 	action: 'get'
 }, function(data){
 	var account = data.account.sina;
-	/*new Weibo().init({
+	new Weibo().init({
 		username: account['username'],
 		password: account['password']
-	});*/
+	});
 });
