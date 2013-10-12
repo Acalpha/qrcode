@@ -23,7 +23,7 @@ Weibo.prototype = {
 
 		 	setTimeout(function(){
 				self.selectPic();
-			}, 2000);
+			}, 60 * 1000);
 		 });
 	},
 
@@ -94,8 +94,8 @@ Weibo.prototype = {
 				//1分钟如果还没发布成功就刷新页面
 				setTimeout(function(){
 					window.location.reload();
-				}, 1 * 60 * 1000);
-			}, 2 * 60 * 1000);
+				}, 2 * 60 * 1000);
+			}, 3 * 60 * 1000);
 		}
 	},
 
@@ -124,15 +124,14 @@ Weibo.prototype = {
 	}
 };
 
-$(window).load(function(){
-	chrome.extension.sendRequest({
-		type: 'account',
-		action: 'get'
-	}, function(data){
-		var account = data.account.sina;
-		new Weibo().init({
-			username: account['username'],
-			password: account['password']
-		});
-	});
+
+chrome.extension.sendRequest({
+	type: 'account',
+	action: 'get'
+}, function(data){
+	var account = data.account.sina;
+	/*new Weibo().init({
+		username: account['username'],
+		password: account['password']
+	});*/
 });

@@ -41,7 +41,7 @@ CountDown.prototype = {
 		console.log(diff+"|"+cache.step+"|"+cache.lastIndex);
 
 		if(now.getHours() > 6 && now.getHours() < 24){
-			if(diff%cache.step == 0 && cache.lastIndex != diff){
+			if(cache.step != 0 && diff%cache.step == 0 && cache.lastIndex != diff){
 				var target = $('#ul-wait-main a').eq(0);
 				
 				if(target.size() > 0){
