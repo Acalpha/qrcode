@@ -32,27 +32,11 @@ var shareTo = (function(){
 	}
 	ShareTo.prototype = {
 		weibo: function(){
-			var link = [
-				'http://service.weibo.com/share/share.php?', 
-				'url=', encodeURIComponent(this.config.url),
-				'&title=', encodeURIComponent(this.config.bdText),
-				'&appkey=2838777972',
-				'&pic=', encodeURIComponent(this.config.pic.join('||')),
-				'&ralateUid='+ this.config.wbUid
-			];
-			window.open(link.join(''));
+			MT.doClick($('.des-tsina a'));
 		},
 
 		tqq: function(){
-			var link = [
-				'http://share.v.t.qq.com/index.php?c=share&a=index',
-				'&url=', encodeURIComponent(this.config.url),
-				'&title=', encodeURIComponent(this.config.bdText),
-				'&appkey=801cf76d3cfc44ada52ec13114e84a96',
-				'&pic=', encodeURIComponent(this.config.pic.join('||')),
-			];
-
-			window.open(link.join(''));
+			MT.doClick($('.des-tqq a'));
 		},
 
 		diandian: function(){
