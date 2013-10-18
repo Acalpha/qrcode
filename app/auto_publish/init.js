@@ -32,6 +32,7 @@ var shareTo = (function(){
 	}
 	ShareTo.prototype = {
 		weibo: function(){
+			console.log(1);
 			MT.doClick($('.des-tsina a'));
 		},
 
@@ -80,6 +81,7 @@ $(window).load(function(){
 			setTimeout(function(){
 				shareTo.cang();
 			}, 6* 60 * 1000);
+
 			//人人小站
 			setTimeout(function(){
 				shareTo.renren();

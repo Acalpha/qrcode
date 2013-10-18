@@ -16,12 +16,23 @@ Renren.prototype = {
 		cache.username = obj.username;
 		cache.password = obj.password;
 
-		if($('.login').size() > 0){
+		if($('.http500').size() > 0){
+			console.log(1);
 			setTimeout(function(){
-				self.login();
-			}, 2000);
+				window.location.reload();
+			}, 3000)
 		}else{
-			self.checkSubmitButton();
+			if($('.login').size() > 0){
+				setTimeout(function(){
+					self.login();
+				}, 2000);
+			}else{
+				if($('#publisherBox').size() > 0){
+					self.checkSubmitButton();
+				}else{
+					window.close();
+				}
+			}
 		}
 	},
 
@@ -67,9 +78,17 @@ Renren.prototype = {
 		var content = $('.photo-desc').eq(0).val()
 		var title = content.split('大图请戳');
 		var topic = content.replace(/#([^#]*)#.*/gi, '$1');
+		var tag = [
+			'<span class="write-tag-list" data-tag="', topic ,'">', topic,
+			'<input type="hidden" name="tag" value="topic">',
+			'<a class="tag-close" href="javascript:;" data-order="del"></a></span>'
+		]
 
 		$('.title-wrap input').val(title[0]);
-		$('.tag-input').val(topic);
+		$('.write-tag-box').append(tag.join(''));
+
+		MT.doClick($('.tag-input'));
+		MT.doClick($('.explain-tag'));
 
 		setTimeout(function(){
 			MT.doClick($('.btn-finish'));

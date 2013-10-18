@@ -2,11 +2,24 @@ var element = null;
 var tipsEl = null;
 var topicKey = 'topic_home';
 var tagKey = 'topic_home_tag';
+var isSign = false;
+var isAdmin = false;
 
-//是否登录
-var isSign = (function(){return $('#user-id').size();})();
-//是否管理员
-var isAdmin = (function(){return $('#user-admin').size();})();
+var userData = null;
+$('script').each(function(){
+    if($(this).html().indexOf('siteConfig') > -1){
+        userData = $(this).html();
+    }
+});
+
+if(userData.match(/id\:\s+\d+/gi)){
+    isSign = true;
+}
+
+if(userData.match(/editor\:\s+true/gi)){
+    isAdmin = true;
+}
+
 
 //页面类型
 var pageType = (function(){

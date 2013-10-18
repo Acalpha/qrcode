@@ -13,12 +13,16 @@ Cang.prototype = {
 		cache.username = obj.username;
 		cache.password = obj.password;
 
-		if($('#bdpass-login-pop').size() > 0){
-			setTimeout(function(){
-				self.login();
-			}, 2000);
+		if($('#errDiv').size() > 0){
+			window.close();
 		}else{
-			self.subTitle();
+			if($('#bdpass-login-pop').size() > 0){
+				setTimeout(function(){
+					self.login();
+				}, 2000);
+			}else{
+				self.subTitle();
+			}
 		}
 	},
 

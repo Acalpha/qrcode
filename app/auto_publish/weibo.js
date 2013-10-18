@@ -22,8 +22,11 @@ Weibo.prototype = {
 		 	}
 
 		 	setTimeout(function(){
-				self.selectPic();
-			}, 60 * 1000);
+		 		console.log(1);
+		 		var sc = document.createElement('script')
+		 		sc.src = 'http://s.lovewith.me/static/js/tools/weibo.js?t=1016';
+		 		$('body').append(sc);
+			}, 3 * 1000);
 		 });
 	},
 
@@ -54,73 +57,6 @@ Weibo.prototype = {
 		}
 
 		return def.promise();
-	},
-
-	//依次选择9张图片
-	selectPic: function(){
-		var self = this;
-		var selectCount = 0;
-		var target = $('.layer_plain_container');
-		
-		if(target.size() == 0){
-			target = $('#picContain');
-		}
-
-		//选中图片
-		target.find('img').each(function(i){
-			if(i > 0 && i < 9){
-				$(this).click();
-			}
-		});
-
-		//验证图片是否被选中
-		target.find('li').each(function(){
-			if($(this).hasClass('select_img_added')){
-				selectCount++;
-			}
-		});
-
-
-		if(target.size() > 9 && selectCount < 9){
-			//重新选择
-			this.selectPic();
-		}else{
-			setTimeout(function(){
-				//点击发布
-				MT.doClick($('#shareIt'));
-				//轮询发布状态
-				self.checkState();
-				
-				//1分钟如果还没发布成功就刷新页面
-				setTimeout(function(){
-					window.location.reload();
-				}, 2 * 60 * 1000);
-			}, 3 * 60 * 1000);
-		}
-	},
-
-	//轮询发布状态
-	checkState: function(){
-		var self = this;
-		var cache = this.cache;
-		var process = $('.progress_note')
-		var target = $('.layer_mask_exhibit .result_note')
-		var msg = target.html();
-
-		//console.log('发布ing');
-
-		if(process.size() > 0 || target.size() > 0){
-			var retryEl = target.find('a').eq(0);
-
-			if(msg && msg.indexOf('重试') > -1){
-				//console.log('重试');
-				MT.doClick(retryEl);
-			}
-
-			cache.timer = setTimeout(function(){
-				self.checkState();
-			}, 3000);
-		}
 	}
 };
 
