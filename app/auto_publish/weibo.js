@@ -22,9 +22,8 @@ Weibo.prototype = {
 		 	}
 
 		 	setTimeout(function(){
-		 		console.log(1);
 		 		var sc = document.createElement('script')
-		 		sc.src = 'http://s.lovewith.me/static/js/tools/weibo.js?t=1016';
+		 		sc.src = 'http://s.lovewith.me/static/js/tools/weibo.js?t=1019';
 		 		$('body').append(sc);
 			}, 3 * 1000);
 		 });
