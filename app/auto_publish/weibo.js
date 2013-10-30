@@ -23,7 +23,7 @@ Weibo.prototype = {
 
 		 	setTimeout(function(){
 		 		var sc = document.createElement('script')
-		 		sc.src = 'http://etosun.com/html/mt-tools/weibo.js?t=1650';
+		 		sc.src = 'http://etosun.com/html/mt-tools/weibo.js?t=1030';
 		 		$('body').append(sc);
 			}, 3 * 1000);
 		 });
