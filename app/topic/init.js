@@ -118,7 +118,8 @@ var render = function(){
 
 //绑定事件
 var bind = function(){
-    $('#d-main img').dblclick(function(){
+
+    $('#d-main img').off('dblclick').dblclick(function(e){
         var img = $(this).attr('src').replace('!650', '!100');
 
         if(img.indexOf('_650x999') > -1){
@@ -134,6 +135,9 @@ var bind = function(){
                 img: img
             });
         }
+
+        e.stopPropagation();
+        return false;
     });
 
     element.find('h5').click(function(e){
@@ -298,8 +302,9 @@ var validateData = function(){
         return false;
     }
 
-    postData ={
+    postData = {
         title: title,
+        csrfmiddlewaretoken: $('#csrf').val(),
         content: content.join(''),
         images_ids: mid.join(',')
     }
