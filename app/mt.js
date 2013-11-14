@@ -19,7 +19,7 @@ var MT = {
 }
 
 var sc = document.createElement('script')
-sc.src = 'http://etosun.com/html/mt-tools/alert.js?t=1031';
+sc.src = 'http://etosun.com/html/mt-tools/alert.js?t=1114';
 $('body').append(sc);
 
 var local = window.location.href;

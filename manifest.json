@@ -1,6 +1,6 @@
 {
 	"name": "婚礼时光运营工具",
-	"version": "0.19.3",
+	"version": "0.20.0",
 	"description": "婚礼时光运营工具",
 	"manifest_version": 2,
 	"icons": {
@@ -51,6 +51,10 @@
 	    {
 			"matches": ["http://zhan.renren.com/*"],
 			"js": ["app/auto_publish/renren.js"]
+	    },
+	    {
+			"matches": ["http://huaban.com/*"],
+			"js": ["app/auto_publish/huaban.js"]
 	    }
 	],
 	"permissions": [

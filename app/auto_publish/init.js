@@ -25,7 +25,6 @@ var configData = (function(){
 	return configData;
 })();
 
-
 var shareTo = (function(){
 	var ShareTo = function(config){
 		this.config = config;
@@ -55,12 +54,21 @@ var shareTo = (function(){
 
 		renren: function(){
 			$('.des-rrzhan form').submit();
+		},
+
+		huaban: function(){
+			var link = [
+				'http://huaban.com/bookmarklet/?url=', encodeURIComponent(this.config.url),
+				'&title=', encodeURIComponent(this.config.bdText),
+				'&media=', encodeURIComponent(this.config.pic[0])
+			];
+
+			window.open(link.join(''))
 		}
 	}
 
 	return new ShareTo(configData);
 })();
-
 
 $(window).load(function(){
 	if(document.referrer.indexOf('cang.baidu.com') > -1){
@@ -72,25 +80,30 @@ $(window).load(function(){
 			//点点
 			setTimeout(function(){
 				shareTo.diandian();
-			}, 2* 60 * 1000);
+			}, 1* 60 * 1000);
 			//腾讯微博
 			setTimeout(function(){
 				shareTo.tqq();
-			}, 4* 60 * 1000);
+			}, 2* 60 * 1000);
 			//百度收藏
 			setTimeout(function(){
 				shareTo.cang();
-			}, 6* 60 * 1000);
+			}, 3* 60 * 1000);
 
 			//人人小站
 			setTimeout(function(){
-				shareTo.renren();
-			}, 8* 60 * 1000);
+				//shareTo.renren();
+			}, 4* 60 * 1000);
 
-			//15分钟后关闭窗口
+			//花瓣
+			setTimeout(function(){
+				shareTo.huaban();
+			}, 5* 60 * 1000);
+
+			//10分钟后关闭窗口
 			setTimeout(function(){
 				window.close();
-			}, 15 * 60 * 1000);
+			}, 10 * 60 * 1000);
 		}
 	}
 })

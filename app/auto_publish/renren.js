@@ -80,7 +80,7 @@ Renren.prototype = {
 		var topic = content.replace(/#([^#]*)#.*/gi, '$1');
 		var tag = [
 			'<span class="write-tag-list" data-tag="', topic ,'">', topic,
-			'<input type="hidden" name="tag" value="topic">',
+			'<input type="hidden" name="tag" value="', topic ,'">',
 			'<a class="tag-close" href="javascript:;" data-order="del"></a></span>'
 		]
 
@@ -93,7 +93,7 @@ Renren.prototype = {
 		setTimeout(function(){
 			MT.doClick($('.btn-finish'));
 
-			//10s后关闭窗口
+			10s后关闭窗口
 			setTimeout(function(){
 				window.close();
 			}, 4 * 1000)
