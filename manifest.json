@@ -55,11 +55,15 @@
 	    {
 			"matches": ["http://huaban.com/*"],
 			"js": ["app/auto_publish/huaban.js"]
+	    },
+	    {
+			"matches": ["http://www.duitang.com/*"],
+			"js": ["app/auto_publish/duitang.js"]
 	    }
 	],
 	"permissions": [
 		"tabs",
-		"http://*/*",
+		"http://*/",
 		"https://*/*",
 		"notifications"
 	]
