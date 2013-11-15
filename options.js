@@ -24,6 +24,15 @@
 		$('#time-step').html(html.join(''))
 	});
 
+
+	$('#account input[type=checkbox]').click(function(){
+		if($(this).get(0).checked){
+			$(this).parents('li').find('input[type=text]').removeAttr('disabled');
+		}else{
+			$(this).parents('li').find('input[type=text]').attr('disabled', 'disabled').val('');
+		}
+	})
+
 	//保存
 	$('#save').click(function(){
 		var errorEl = null;
@@ -91,12 +100,16 @@
 			var el = $('#account li[data-type="'+ k +'"]');
 			
 			el.find('.inp-text').each(function(){
-				if($(this).attr('name') == 'username'){
-					$(this).val(account[k]['username']);
-				}
+				if(account[k]['username'] && account[k]['username']){
+					if($(this).attr('name') == 'username'){
+						$(this).removeAttr('disabled').val(account[k]['username']);
+					}
 
-				if($(this).attr('name') == 'pwd'){
-					$(this).val(account[k]['password']);
+					if($(this).attr('name') == 'pwd'){
+						$(this).removeAttr('disabled').val(account[k]['password']);
+					}
+
+					$(this).parents('li').find('input[type=checkbox]').attr('checked', 'checked');
 				}
 			});
 		};
