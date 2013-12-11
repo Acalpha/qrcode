@@ -29,11 +29,13 @@ Qweibo.prototype = {
 
 			setTimeout(function(){
 				MT.doClick($('#subbtn'));
+				self.closeWindow();
 			}, 1500)
 		}
 	},
 
 	login: function(){
+		var self = this;
 		var cache = this.cache;
 		var doc = $("#login_frame").contents();
 
@@ -45,6 +47,13 @@ Qweibo.prototype = {
 
 			MT.doClick(doc.find('#login_button'));
 		}, 2200);
+	},
+
+	//2分钟后关闭窗口
+	closeWindow: function(){
+		setTimeout(function(){
+			window.close();
+		}, 120 * 1000);
 	},
 
 	//选中图片
