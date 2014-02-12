@@ -1,7 +1,7 @@
 {
 	"name": "二维码",
 	"version": "0.0.1",
-	"description": "根据当前页面url生成二维码，便于在移动端打开查看或分享到微信。",
+	"description": "根据当前页面url生成二维码，便于在移动端查看或通过微信分享",
 	"manifest_version": 2,
 	"icons": {
         "48": "images/icon48.png"

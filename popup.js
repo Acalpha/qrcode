@@ -30,8 +30,8 @@ chrome.tabs.getSelected(null, function(tab) {
     var qrCodeAlg = new QRCodeAlg(tab.url, 3);
 
     var canvas = createCanvas({
-        width: 128,
-        height: 128,
+        width: 256,
+        height: 256,
         background: '#ffffff',
         foreground: '#000000',
         qrCodeAlg: qrCodeAlg
