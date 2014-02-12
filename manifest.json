@@ -1,70 +1,18 @@
 {
-	"name": "婚礼时光运营工具",
-	"version": "0.20.5",
-	"description": "婚礼时光运营工具",
+	"name": "二维码",
+	"version": "0.0.1",
+	"description": "根据当前页面url生成二维码，便于在移动端打开查看或分享到微信。",
 	"manifest_version": 2,
 	"icons": {
-		"48": "images/icon48.png"
+        "48": "images/icon48.png"
 	},
-	"background": {
-		"page": "background.html"
-	},
-	"options_page": "options.html",
-	"content_scripts": [
-		{
-			"matches": ["http://*/*"],
-			"js": ["app/jquery.js", "app/mt.js"],
-			"css": ["app/topic/main.css"]
-		},
-	    {
-			"matches": ["http://*.lovewith.me/share/detail/*/?mid=*"],
-			"js": ["app/topic/init.js"]
-	    },
-	    {
-			"matches": ["http://*.lovewith.me/tools/wb.html"],
-			"js": ["app/auto_publish/countdown.js"]
-		},
-	    {
-			"matches": ["http://*.lovewith.me/share/detail/all/*"],
-			"js": ["app/auto_publish/init.js"]
-	    },
-	    {
-			"matches": ["http://service.weibo.com/share/share*"],
-			"js": ["app/auto_publish/weibo.js"]
-	    },
-	    {
-			"matches": ["http://www.diandian.com/*"],
-			"js": ["app/auto_publish/diandian.js"]
-	    },
-	    {
-			"matches": ["http://share.v.t.qq.com/index*"],
-			"js": ["app/auto_publish/tqq.js"]
-	    },
-	    {
-			"matches": ["http://cang.baidu.com/do/*"],
-			"js": ["app/auto_publish/cang.js"]
-	    },
-	    {
-			"matches": ["http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey*"],
-			"js": ["app/auto_publish/qzone.js"]
-	    },
-	    {
-			"matches": ["http://zhan.renren.com/*"],
-			"js": ["app/auto_publish/renren.js"]
-	    },
-	    {
-			"matches": ["http://huaban.com/*"],
-			"js": ["app/auto_publish/huaban.js"]
-	    },
-	    {
-			"matches": ["http://www.duitang.com/*"],
-			"js": ["app/auto_publish/duitang.js"]
-	    }
-	],
+    "browser_action": {
+        "default_icon": "images/icon.png",
+        "default_popup": "popup.html"
+    },
 	"permissions": [
 		"tabs",
 		"http://*/",
-		"https://*/*",
-		"notifications"
+		"https://*/*"
 	]
 }
