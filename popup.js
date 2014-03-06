@@ -3,8 +3,6 @@ var createCanvas = function(config){
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
 
-    console.log(qrCodeAlg);
-
     canvas.width = config.width;
     canvas.height = config.height;
    
@@ -24,8 +22,8 @@ var createCanvas = function(config){
 
     return canvas;
 }
-//返回绘制的节点
 
+//返回绘制的节点
 chrome.tabs.getSelected(null, function(tab) {
     var qrCodeAlg = new QRCodeAlg(tab.url, 3);
 

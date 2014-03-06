@@ -1,0 +1,12 @@
+.mt-qrcode-blur {position:absolute;top:0;left:50%;z-index:20000;width:100%;-webkit-filter:blur(2px);left:50%;}
+
+.mt-qrcode-box {position:fixed;top:50%;left:50%;z-index:20001;margin:-140px 0 0 -140px;width:280;height:280;opacity:.9;}
+	.mt-qrcode-box:after {content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;background:#000;opacity:0.2;}
+	.mt-qrcode-box canvas {position:relative;z-index:1;padding:15px;border-radius:10px;background:#fff;}
+
+
+
+
+
+
+
