@@ -14,7 +14,7 @@
     },
     "content_scripts": [
     	{
-			"matches": ["http://*/*"],
+			"matches": ["http://*/*","https://*/*"],
 			"js": ["lib/qrcodealg.js", "content/code.js"],
 			"css": ["content/main.css"]
 		}

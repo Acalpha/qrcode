@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 	if(request.action == 'showQrCode'){
 		if(document.getElementsByClassName('mt-qrcode-blur').length > 0){
 			return false;
@@ -33,13 +33,17 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		var canvas = createCanvas({
 	        width: 250,
 	        height: 250,
-	        background: '#ffffff',
+	        background: 'transparent',
 	        foreground: '#000000',
 	        qrCodeAlg: qrCodeAlg
 	    });
 
 		var box = document.createElement('div');
+		var boxClose = document.createElement('span');
+		boxClose.setAttribute('class', 'mt-qrcode-close');
 		box.setAttribute('class', 'mt-qrcode-box');
+
+		box.appendChild(boxClose);
 		box.appendChild(canvas);
 		
 	    var bodyWrap = document.createElement('div');
@@ -53,7 +57,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	    bodyWrap.style.visibility = 'visible';
 
 	    document.body.appendChild(box);
-	    document.body.style.overflow = 'hidden';
-	    box.className = 'mt-qrcode-box mt-qrcode-box-active';
+	    setTimeout(function(){
+	    	box.className = 'mt-qrcode-box mt-qrcode-box-active';
+	    	bodyWrap.className = 'mt-qrcode-blur mt-qrcode-blur-active';
+	    }, 20);
+
+	    boxClose.addEventListener('click', function(){
+	    	bodyWrap.parentNode.removeChild(bodyWrap);
+	    	box.parentNode.removeChild(box);
+	    });
 	}
 });
