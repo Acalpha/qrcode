@@ -1,0 +1,27 @@
+{
+   "background": {
+      "scripts": [ "app/lib/when/when.js", "app/my/StringUtil.js", "app/my/TagStore.js", "app/my/BookmarkStore.js", "app/my/background.js" ]
+   },
+   "default_locale": "en",
+   "description": "__MSG_extDescription__",
+   "icons": {
+      "128": "app/my/icons/icon128.png",
+      "16": "app/my/icons/tag-hash.png",
+      "48": "app/my/icons/icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC1PXK3YJG3gQ1qRFy4nUHwxmuAF2t1BGSW/zJAdm4N0rlcb3kSCwnqQcY5XVM8QoCFTH3ylLbC7b0/kgiHSLYJXcJhYKgsYkS+15ZT/LyAFyXnsU+YkjltAlYwaI25Kfxuel+C26P7l3CzueWUHUZ5rRt0AP24EWjNADItiAi6EwIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_extName__",
+   "omnibox": {
+      "keyword": "#"
+   },
+   "options_page": "app/my/options.html",
+   "page_action": {
+      "default_icon": "app/my/icons/tag-white.png",
+      "default_popup": "app/my/popup.html",
+      "default_title": "__MSG_pageActionTitle__"
+   },
+   "permissions": [ "tabs", "bookmarks" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.2"
+}
