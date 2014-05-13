@@ -4,14 +4,25 @@
 <meta charset="utf-8">
 <title>bookmarkers</title>
 <script src="lib/angular.min.js"></script>
-<script src="lib/zepto.min.js"></script>
 <script src="lib/bookmarker.js"></script>
+<link rel="stylesheet" href="content/tab.css" />
 </head>
-<body ng-controller="BookMarkers">
-<ul>
-	<li ng-repeat="bm in markers">
-		{{bm}}
-	</li>
-</ul>
+<body ng-controller="BookMarkers" ng-load="focusKeyword(this)">
+	<div class="bm-search">
+		<label class="bm-search-box {{searchType}}">
+			<span></span>
+			<input type="search" name="keyword" ng-keyup="search($event)" value="" size="58" />
+		</label>
+		<div class="tags">
+			<span ng-repeat="(tag, data) in markers" ng-click="showTagMarkers(data, this)">{{tag}}</span>
+		</div>
+	</div>
+	<div class="bm-item">
+		<ul>
+			<li ng-repeat="m in tagMarker">
+				<span>{{m}}</span>
+			</li>
+		</ul>
+	</div>
 </body>
 </html>
