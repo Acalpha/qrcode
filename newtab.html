@@ -8,10 +8,10 @@
 <link rel="stylesheet" href="content/tab.css" />
 </head>
 <body ng-controller="BookMarkers" ng-load="focusKeyword(this)">
-	<div class="bm-search">
+	<div class="bm-search {{searchState}}">
 		<label class="bm-search-box {{searchType}}">
 			<span></span>
-			<input type="search" name="keyword" ng-keyup="search($event)" value="" size="58" />
+			<input type="search" name="tag" ng-keyup="search($event)" value="" size="58" />
 		</label>
 		<div class="tags">
 			<span ng-repeat="(tag, data) in markers" ng-click="showTagMarkers(data, this)">{{tag}}</span>
@@ -19,8 +19,8 @@
 	</div>
 	<div class="bm-item">
 		<ul>
-			<li ng-repeat="m in tagMarker">
-				<span>{{m}}</span>
+			<li ng-repeat="tag in tagMarker">
+				<a href="{{tag.url}}" target="_blank">{{tag.title}}</a>
 			</li>
 		</ul>
 	</div>
