@@ -1,33 +1,34 @@
 {
-	"name": "二维码",
-	"version": "0.0.2",
-	"description": "根据当前页面url生成二维码，便于在移动端查看或通过微信分享",
-	"manifest_version": 2,
-	"icons": {
-        "48": "images/icon48.png"
-	},
-	"chrome_url_overrides" : {
-		"newtab": "newtab.html"
-	},
-	"options_page": "options.html",
-	"background": {
-		"page": "background.html"
-	},
-    "browser_action": {
-        "default_icon": "images/icon.png"
+    "name": "Dog",
+    "version": "0.0.1",
+    "description": "Dog",
+    "manifest_version": 2,
+    "background": {
+        "page": "background.html"
+    },
+    "page_action" :{
+        "default_icon": {
+            "19" : "images/icon19.png",
+            "38": "images/icon38.png"
+        },
+        "default_title" : "Page Action",
+        "default_popup": "popup.html"
+    },
+    "options_page": "options.html",
+    "icons" : {
+        "48": "images/icon48.png",
+        "96": "images/icon96.png",
+        "128": "images/icon128.png"
     },
     "content_scripts": [
-    	{
-			"matches": ["http://*/*","https://*/*"],
-			"js": ["lib/qrcodealg.js", "content/code.js"],
-			"css": ["content/main.css"]
-		}
-   	],
-	"permissions": [
-		"bookmarks",
-		"tabs",
-		"storage",
-		"http://*/",
-		"https://*/*"
-	]
+        {
+            "matches": ["http://*/*"],
+            "css": ["content/main.css"],
+            "js": ["content/jquery.min.js", "content/page.js"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "http://*/"
+    ]
 }
