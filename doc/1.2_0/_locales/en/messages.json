@@ -1,0 +1,168 @@
+{
+   "disabled": {
+      "message": "N/A"
+   },
+   "extDescription": {
+      "message": "Allows you to treat folders as if they were tags."
+   },
+   "extName": {
+      "message": "Bookmark#"
+   },
+   "newTag": {
+      "message": "New tag"
+   },
+   "omnibox_description": {
+      "message": "Switch mode (prepend): $switch$, AND operation: $and$, Next page (append): $next$",
+      "placeholders": {
+         "and": {
+            "content": "$1"
+         },
+         "next": {
+            "content": "$3"
+         },
+         "switch": {
+            "content": "$2"
+         }
+      }
+   },
+   "omnibox_pager": {
+      "message": "(Page $current$ of $total$)",
+      "placeholders": {
+         "current": {
+            "content": "$1"
+         },
+         "total": {
+            "content": "$2"
+         }
+      }
+   },
+   "opts_alertBarFieldLabel": {
+      "message": "Alert bar"
+   },
+   "opts_alertBarNo": {
+      "message": "Don't show alert bar"
+   },
+   "opts_alertBarYes": {
+      "message": "Show alert bar if there are unsaved changes"
+   },
+   "opts_aliasPrefixFieldLabel": {
+      "message": "Alias prefix"
+   },
+   "opts_andSeparatorFieldLabel": {
+      "message": "Intersection operator"
+   },
+   "opts_defaultParentIdFieldLabel": {
+      "message": "Default parent tag"
+   },
+   "opts_defaultParentIdTooltip": {
+      "message": "Tags created from the 'Tags' field will be stored under this tag (folder)."
+   },
+   "opts_dialogButtonLabel": {
+      "message": "Change..."
+   },
+   "opts_dialogCloseButtonLabel": {
+      "message": "Close"
+   },
+   "opts_expandTopLevelFieldLabel": {
+      "message": "Expand tag tree"
+   },
+   "opts_expandTopLevelNo": {
+      "message": "Don't expand \"Other bookmarks\" tag"
+   },
+   "opts_expandTopLevelYes": {
+      "message": "Expand \"Other bookmarks\" tag when the popup window opens"
+   },
+   "opts_flattrButtonTooltip": {
+      "message": "Please support the development by donating via Flattr."
+   },
+   "opts_ignoreCaseFieldLabel": {
+      "message": "Ignore case"
+   },
+   "opts_ignoreDiacriticsFieldLabel": {
+      "message": "Ignore accent marks"
+   },
+   "opts_ignoreSpacesFieldLabel": {
+      "message": "Ignore spaces"
+   },
+   "opts_ignoredPunctuationsFieldLabel": {
+      "message": "Ignored punctuation marks"
+   },
+   "opts_milliseconds": {
+      "message": "milliseconds (1 second = 1000 milliseconds)"
+   },
+   "opts_modeSwitchFieldLabel": {
+      "message": "Switch mode operator"
+   },
+   "opts_nextPageFieldLabel": {
+      "message": "Next page operator"
+   },
+   "opts_no": {
+      "message": "No"
+   },
+   "opts_normalizationPaneLabel": {
+      "message": "Search term folding"
+   },
+   "opts_omniboxPaneLabel": {
+      "message": "Search mode and operators"
+   },
+   "opts_popupPaneLabel": {
+      "message": "Popup window"
+   },
+   "opts_recursiveSearchFieldLabel": {
+      "message": "Default search mode"
+   },
+   "opts_recursiveSearchNo": {
+      "message": "Non-recursive"
+   },
+   "opts_recursiveSearchYes": {
+      "message": "Recursive"
+   },
+   "opts_reindexButtonLabel": {
+      "message": "Rebuild index"
+   },
+   "opts_saveButtonLabel": {
+      "message": "Save changes"
+   },
+   "opts_searchDelayFieldLabel": {
+      "message": "Search delay"
+   },
+   "opts_title": {
+      "message": "Options"
+   },
+   "opts_unignoredDiacriticsFieldLabel": {
+      "message": "Exception"
+   },
+   "opts_yes": {
+      "message": "Yes"
+   },
+   "pageActionTitle": {
+      "message": "Edit tags for this page"
+   },
+   "popup_addIconTooltip": {
+      "message": "Add child tag"
+   },
+   "popup_deleteButtonLabel": {
+      "message": "Delete"
+   },
+   "popup_renameIconTooltip": {
+      "message": "Rename"
+   },
+   "popup_saveButtonLabel": {
+      "message": "Save"
+   },
+   "popup_tagListAddButtonLabel": {
+      "message": "Add"
+   },
+   "popup_tagListItemRemoveButtonLabel": {
+      "message": "Remove"
+   },
+   "popup_tagsFieldLabel": {
+      "message": "Tags"
+   },
+   "popup_titleBarLabel": {
+      "message": "Bookmark"
+   },
+   "popup_titleFieldLabel": {
+      "message": "Title"
+   }
+}

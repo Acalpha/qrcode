@@ -1,0 +1,79 @@
+
+body {
+	width: 300px;
+	height: 400px;
+}
+
+#mainContainer {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	padding: 10px;
+	width: 280px;
+	height: 380px;
+}
+
+#mainContainer > * {
+	margin-bottom: 5px;
+}
+
+#titleBar {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #999;
+}
+
+.spacer {
+	-webkit-box-flex: 1.0;
+}
+
+#deleteButton {
+	display: none;
+	cursor: pointer;
+	color: #900;
+}
+
+#deleteButton:hover {
+	color: #F00;
+}
+
+#inputFields td:first-child {
+	white-space: nowrap;
+}
+
+#inputFields td:nth-child(2) {
+	padding: 0 2px;
+	font-weight: bold;
+}
+
+#inputFields tr:first-child > td {
+	padding-bottom: 2px;
+}
+
+#inputFields tr:last-child > td:first-child,
+#inputFields tr:last-child > td:nth-child(2) {
+	vertical-align: top;
+	padding-top: 2px;
+}
+
+.tagLink {
+	cursor: pointer;
+}
+
+.tagLink:hover {
+	color: #99F;
+}
+
+#tagTree {
+	-webkit-box-flex: 1.0;
+}
+
+#buttonContainer {
+	text-align: right;
+	border-bottom: 2px solid white;
+}
+
+#buttonContainer.unsaved {
+	border-color: #F60;
+}
+

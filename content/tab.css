@@ -1,0 +1,24 @@
+html, body {background:#ececec;}
+* {list-style:none;padding:0;margin:0;font-size:12px;font-family:verdana;}
+
+
+/* search */
+.bm-search {margin:18% 0 50px;}
+.bm-search-active {margin-top:5%;transition:all 0.2s ease-out;}
+	.bm-search-box {display:block;margin:0 auto;padding:10px 0 10px 0;border:1px solid #ccc;border-radius:20px;height:18px;width:474px;background:#fff;}
+		.bm-search-box span {float:left;margin:1px 0 0 15px;width:16px;height:16px;background-color:#fff;background-image:url('chrome-extension://__MSG_@@extension_id__/images/tab-icon.png');overflow:hidden;}
+		/* 百度搜索 */
+		.bm-search-bd span {background-position:0 -16px;}
+		/* google搜索 */
+		.bm-search-g span {background-position:0 -32px;}
+		.bm-search-box input {float:left;height:18px;line-height:16px;border:0;outline:none;text-indent:5px;font-size:14px;background:none;}
+
+	.bm-search .tags {padding-top:100px;font-size:0;text-align:center;}
+		.bm-search .tags span {display:inline-block;margin:0 5px;padding:5px 10px;border:2px solid #ccc;border-radius:8px;font-size:12px;color:#666;background:#fff;overflow:hidden;cursor:pointer;}
+
+/* bookmarker item */
+.bm-item {display:;margin:0 auto;width:960px;list-style:none;overflow:hidden;}
+	.bm-item ul {padding:0 20px;overflow:hidden;}
+		.bm-item li  {display:inline;}
+			.bm-item li a{display:inline-block;margin:0 10px 10px 0;padding:5px 10px;border:2px solid #ccc;border-radius:8px;background:#fff;overflow:hidden;}
+			.bm-item li a {cursor:pointer;text-decoration:none;color:#666;}

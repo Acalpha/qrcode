@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
 <meta charset="utf-8">
-<title>设置</title>
-<style>
-
-</style>
+<title>bookmarkers</title>
+<script src="lib/angular.min.js"></script>
+<script src="lib/zepto.min.js"></script>
+<script src="lib/bookmarker.js"></script>
 </head>
-<body>
-<div class="page">
-    <h4>设置</h4>
-</div>
+<body ng-controller="BookMarkers">
+<ul>
+	<li ng-repeat="bm in markers">
+		{{bm.title}}
+		{{bm.url}}
+		{{bm.tags}}
+	</li>
+</ul>
 </body>
 </html>

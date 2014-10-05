@@ -1,0 +1,28 @@
+{
+   "background": {
+      "scripts": [ "global.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "media/icon19.png",
+      "default_popup": "popup.html",
+      "default_title": "Bookmarks Tagger"
+   },
+   "content_security_policy": "script-src 'self'; object-src 'self'",
+   "description": "Assign tags to your bookmarks and search for them through the address bar.",
+   "icons": {
+      "112": "media/icon112.png",
+      "16": "media/icon16-on.png",
+      "48": "media/icon48.png",
+      "96": "media/icon96.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC//1Mh+jkRZ8Fxxt7Op0wLM5iKYp3/Nhknhh5OPuUjoaVwGOd3pkAIUVOseIfW6aD5y4TvDgBC55pWIom10OBFMpAG6t4CM/YRaS1iCpBk9Nb1GrHSOBhppz770+5/rmrWRAExNIn809N9jNvd/IEiOqCfYRnQljMU+7VaUoTKYQIDAQAB",
+   "manifest_version": 2,
+   "name": "Bookmarks Tagger",
+   "omnibox": {
+      "keyword": "bt"
+   },
+   "options_page": "options.html",
+   "permissions": [ "bookmarks", "tabs" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.2"
+}
