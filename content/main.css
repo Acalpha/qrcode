@@ -1,5 +1,4 @@
-.mt-qrcode-blur {position:absolute;top:0;left:50%;z-index:20000;width:100%;-webkit-filter:blur(2px);/*-webkit-transform-origin: 50% 0;-webkit-transition-duration:.2s;*/}
-.mt-qrcode-blur-active {/*background:#fff;-webkit-transform:scale(0.98);-webkit-transition-property:-webkit-transform,background-color;*/}
+.mt-qrcode-blur {position:absolute;top:0;left:50%;z-index:999999998;width:100%;-webkit-filter:blur(2px);}
 
 @-webkit-keyframes swing {
     0% {margin-top:-120px;}
@@ -9,7 +8,7 @@
 }
 
 
-.mt-qrcode-box {position:fixed;top:50%;left:50%;z-index:20001;margin:-200px 0 0 -140px;width:280px;height:280px;opacity:0;}
+.mt-qrcode-box {position:fixed;top:50%;left:50%;z-index:999999999;margin:-200px 0 0 -140px;width:280px;height:280px;opacity:0;}
 .mt-qrcode-box-active {margin-top:-140px;opacity:1;transition:all .2s ease-out;}
 .mt-qrcode-box-swing {
 	-webkit-animation-name:swing;
@@ -18,7 +17,7 @@
     -webkit-animation-direction: alternate;
     -webkit-animation-timing-function:ease-in-out;
 }
-	.mt-qrcode-box:after {content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;background:#000;opacity:0.6;}
-	.mt-qrcode-box canvas {position:relative;z-index:1;padding:15px;border-radius:8px;background:-webkit-linear-gradient(top, #f4f4f4 0%,#f2f4f6 100%);}
-	.mt-qrcode-close {position:absolute;z-index:2;top:-10px;right:-10px;box-sizing:border-box;width:21px;height:21px;border:2px solid #fff;box-shadow:0 0 10px rgba(0,0,0,.5);border-radius:100%;background:#000 url(data:image/gif;base64,R0lGODlhCQAJAJEAAP///////////wAAACH5BAEHAAIALAAAAAAJAAkAAAIRBIRom+zW1kmCUTkrfBlTXQAAOw==) no-repeat 4px 4px;cursor:pointer;opacity:0.8;}
-	.mt-qrcode-close:hover {background-color:#BE1F24;box-shadow:0 0 10px rgba(0,0,0,.7);}
+.mt-qrcode-box:after {content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;background:#000;opacity:0.6;}
+.mt-qrcode-box canvas {position:relative;z-index:1;padding:15px;border-radius:5px;background:-webkit-linear-gradient(top, #f4f4f4 0%,#f2f4f6 100%);}
+.mt-qrcode-close {position:absolute;z-index:2;top:-10px;right:-10px;box-sizing:border-box;width:21px;height:21px;border:2px solid #fff;box-shadow:0 0 10px rgba(0,0,0,.5);border-radius:100%;background:#000 url(data:image/gif;base64,R0lGODlhCQAJAJEAAP///////////wAAACH5BAEHAAIALAAAAAAJAAkAAAIRBIRom+zW1kmCUTkrfBlTXQAAOw==) no-repeat 4px 4px;cursor:pointer;}
+.mt-qrcode-close:hover {background-color:#BE1F24;box-shadow:0 0 10px rgba(0,0,0,1);}

@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 	if(request.action == 'showQrCode'){
-		var el = document.getElementsByClassName('mt-qrcode-box');
+		var el = document.getElementsByClassName('mt-qrcode-box')
 
 		if(el.length == 0){
 			var qrCodeAlg = new QRCodeAlg(window.location.href, 3);
@@ -10,6 +10,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 			    var ctx = canvas.getContext('2d');
 
 			    canvas.width = config.width;
+				canvas.style.width = config.width/2 +'px';
+				canvas.style.height = config.height/2 +'px';
 			    canvas.height = config.height;
 			   
 			    //计算每个点的长宽
@@ -30,8 +32,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 			};
 
 			var canvas = createCanvas({
-		        width: 250,
-		        height: 250,
+		        width: 500,
+		        height: 500,
 		        background: 'transparent',
 		        foreground: '#000000',
 		        qrCodeAlg: qrCodeAlg
@@ -69,7 +71,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 			el[0].className = 'mt-qrcode-box mt-qrcode-box-active mt-qrcode-box-swing';
 			setTimeout(function(){
 				el[0].className = 'mt-qrcode-box mt-qrcode-box-active';
-			}, 540)
+			}, 300)
 		}
 	}
 });
